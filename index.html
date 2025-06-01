@@ -13,12 +13,12 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
+      background: linear-gradient(to bottom right, #fef9f1, #fff2cc);
       color: #222;
     }
 
     header {
-      background-color: #000;
+      background: linear-gradient(to right, #000, #333);
       color: #ffd700;
       padding: 2em 1em;
       text-align: center;
@@ -26,52 +26,71 @@
 
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 2.3em;
     }
 
     .descripcion {
       padding: 1.5em;
       text-align: center;
-      background-color: #fff;
       font-size: 1.1em;
     }
 
     .catalogo {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
       padding: 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     .card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background-color: #fffdf5;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       padding: 1.5em;
       text-align: center;
-      transition: transform 0.2s;
+      border: 2px solid #ffd700;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
     .card h3 {
       margin: 0.5em 0;
       font-weight: 600;
+      color: #000;
     }
 
     .precio {
       font-size: 1.3em;
-      color: #000;
+      color: #111;
+      margin-bottom: 1em;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1da851;
     }
 
     .contacto {
       background-color: #fff;
       padding: 2em;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -101,24 +120,6 @@
       font-size: 0.9em;
     }
 
-    .whatsapp-btn {
-      display: block;
-      width: fit-content;
-      margin: 2em auto 0;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: background-color 0.2s;
-    }
-
-    .whatsapp-btn:hover {
-      background-color: #1da851;
-    }
-
     ul {
       padding-left: 1.2em;
     }
@@ -128,21 +129,44 @@
 
   <header>
     <h1>Peluquería Nizar</h1>
-    <p>Est. 2015 · Tel: 617 11 41 21</p>
+    <p>Desde 2015 · Teléfono: 617 11 41 21</p>
   </header>
 
   <section class="descripcion">
-    <p>Bienvenido a <strong>Peluquería Nizar</strong>, tu barbería de confianza en Burlada. 
-    Ofrecemos cortes modernos, clásicos y afeitados profesionales con un trato cercano y precios accesibles. ¡Ven a cuidarte como te mereces!</p>
+    <p><strong>Peluquería Nizar</strong> es tu barbería de confianza en Burlada. Te ofrecemos cortes modernos, clásicos y servicios de afeitado profesional. ¡Te esperamos!</p>
   </section>
 
   <section class="catalogo">
-    <div class="card"><h3>Corte Hombre</h3><p class="precio">10 €</p></div>
-    <div class="card"><h3>Corte Niño</h3><p class="precio">9 €</p></div>
-    <div class="card"><h3>Corte Jubilado</h3><p class="precio">10 €</p></div>
-    <div class="card"><h3>Cortar y Afeitar</h3><p class="precio">18 €</p></div>
-    <div class="card"><h3>Cortar y Lavar</h3><p class="precio">15 €</p></div>
-    <div class="card"><h3>Cortar Barba</h3><p class="precio">5 €</p></div>
+    <div class="card">
+      <h3>Corte Hombre</h3>
+      <p class="precio">10 €</p>
+      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Corte%20Hombre" target="_blank">Reservar</a>
+    </div>
+    <div class="card">
+      <h3>Corte Niño</h3>
+      <p class="precio">9 €</p>
+      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Corte%20Niño" target="_blank">Reservar</a>
+    </div>
+    <div class="card">
+      <h3>Corte Jubilado</h3>
+      <p class="precio">10 €</p>
+      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Corte%20Jubilado" target="_blank">Reservar</a>
+    </div>
+    <div class="card">
+      <h3>Cortar y Afeitar</h3>
+      <p class="precio">18 €</p>
+      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Cortar%20y%20Afeitar" target="_blank">Reservar</a>
+    </div>
+    <div class="card">
+      <h3>Cortar y Lavar</h3>
+      <p class="precio">15 €</p>
+      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Cortar%20y%20Lavar" target="_blank">Reservar</a>
+    </div>
+    <div class="card">
+      <h3>Cortar Barba</h3>
+      <p class="precio">5 €</p>
+      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Cortar%20Barba" target="_blank">Reservar</a>
+    </div>
   </section>
 
   <section class="contacto">
@@ -161,8 +185,6 @@
       src="https://www.google.com/maps?q=C.%20Hilarión%20Eslava%2C%204%2C%2031600%20Burlada%2C%20Navarra&output=embed" 
       allowfullscreen>
     </iframe>
-
-    <a href="https://wa.me/34617114121" class="whatsapp-btn" target="_blank">Reservar por WhatsApp</a>
   </section>
 
   <footer>
