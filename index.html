@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peluquería Nizar - Catálogo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background-color: #000;
+      color: #ffd700;
+      padding: 2em 1em;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .descripcion {
+      padding: 1.5em;
+      text-align: center;
+      background-color: #fff;
+      font-size: 1.1em;
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5em;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin: 0.5em 0;
+      font-weight: 600;
+    }
+
+    .precio {
+      font-size: 1.3em;
+      color: #000;
+    }
+
+    .contacto {
+      background-color: #fff;
+      padding: 2em;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contacto h2 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .contacto p, .contacto li {
+      font-size: 1em;
+      margin: 0.3em 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 1em;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+    }
+
+    .whatsapp-btn {
+      display: block;
+      width: fit-content;
+      margin: 2em auto 0;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.2s;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1da851;
+    }
+
+    ul {
+      padding-left: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Peluquería Nizar</h1>
+    <p>Est. 2015 · Tel: 617 11 41 21</p>
+  </header>
+
+  <section class="descripcion">
+    <p>Bienvenido a <strong>Peluquería Nizar</strong>, tu barbería de confianza en Burlada. 
+    Ofrecemos cortes modernos, clásicos y afeitados profesionales con un trato cercano y precios accesibles. ¡Ven a cuidarte como te mereces!</p>
+  </section>
+
+  <section class="catalogo">
+    <div class="card"><h3>Corte Hombre</h3><p class="precio">10 €</p></div>
+    <div class="card"><h3>Corte Niño</h3><p class="precio">9 €</p></div>
+    <div class="card"><h3>Corte Jubilado</h3><p class="precio">10 €</p></div>
+    <div class="card"><h3>Cortar y Afeitar</h3><p class="precio">18 €</p></div>
+    <div class="card"><h3>Cortar y Lavar</h3><p class="precio">15 €</p></div>
+    <div class="card"><h3>Cortar Barba</h3><p class="precio">5 €</p></div>
+  </section>
+
+  <section class="contacto">
+    <h2>Contacto y Horarios</h2>
+    <p><strong>Dirección:</strong> C. Hilarión Eslava, 4, 31600 Burlada, Navarra</p>
+    <p><strong>Teléfono / WhatsApp:</strong> 617 11 41 21</p>
+
+    <h3>Horario</h3>
+    <ul>
+      <li>Lunes a Viernes: 9:30–13:30 / 16:00–20:00</li>
+      <li>Sábado: 9:30–14:00</li>
+      <li>Domingo: Cerrado</li>
+    </ul>
+
+    <iframe 
+      src="https://www.google.com/maps?q=C.%20Hilarión%20Eslava%2C%204%2C%2031600%20Burlada%2C%20Navarra&output=embed" 
+      allowfullscreen>
+    </iframe>
+
+    <a href="https://wa.me/34617114121" class="whatsapp-btn" target="_blank">Reservar por WhatsApp</a>
+  </section>
+
+  <footer>
+    © 2025 Peluquería Nizar – Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
