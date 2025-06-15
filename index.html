@@ -2,194 +2,273 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peluquería Nizar - Catálogo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peluquería Nizar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { margin:0; padding:0; box-sizing: border-box;}
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #fef9f1, #fff2cc);
-      color: #222;
+      background:#f9f9f9;
+      color:#222;
+      line-height: 1.6;
     }
-
     header {
-      background: linear-gradient(to right, #000, #333);
-      color: #ffd700;
-      padding: 2em 1em;
+      background: linear-gradient(90deg, #203a43, #2c5364);
+      color: white;
       text-align: center;
+      padding: 3rem 1rem;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.3em;
+    header h1 { font-size: 3rem; margin-bottom: .5rem;}
+    nav {
+      background:#1e1e1e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
     }
-
-    .descripcion {
-      padding: 1.5em;
-      text-align: center;
-      font-size: 1.1em;
-    }
-
-    .catalogo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background-color: #fffdf5;
-      border-radius: 15px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-      padding: 1.5em;
-      text-align: center;
-      border: 2px solid #ffd700;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .card h3 {
-      margin: 0.5em 0;
+    nav a {
+      color: white;
+      text-decoration: none;
       font-weight: 600;
-      color: #000;
+      transition: color 0.3s ease;
     }
-
-    .precio {
-      font-size: 1.3em;
-      color: #111;
-      margin-bottom: 1em;
+    nav a:hover {
+      color: #00c8ff;
     }
-
-    .btn-whatsapp {
-      display: inline-block;
+    section {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #203a43;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .services, .gallery, .team {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: grid;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      text-align: center;
+    }
+    .card img {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .info {
+      text-align: center;
+      max-width: 600px;
+      margin: auto;
+    }
+    footer {
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background-color: #25d366;
       color: white;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.2s;
-    }
-
-    .btn-whatsapp:hover {
-      background-color: #1da851;
-    }
-
-    .contacto {
-      background-color: #fff;
-      padding: 2em;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .contacto h2 {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
       text-align: center;
-      margin-bottom: 1em;
+      font-size: 30px;
+      line-height: 60px;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
     }
-
-    .contacto p, .contacto li {
-      font-size: 1em;
-      margin: 0.3em 0;
+    .whatsapp-float:hover {
+      transform: scale(1.1);
     }
-
-    iframe {
+    /* Equipo */
+    .team .card h3 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #203a43;
+    }
+    .team .card p {
+      font-size: 1rem;
+      color: #555;
+      margin-top: .3rem;
+    }
+    /* Tabla precios */
+    table {
       width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 1em;
+      max-width: 400px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 1.1rem;
     }
-
-    footer {
-      background-color: #000;
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #203a43;
       color: white;
-      text-align: center;
-      padding: 1em;
-      font-size: 0.9em;
     }
-
-    ul {
-      padding-left: 1.2em;
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Peluquería Nizar</h1>
-    <p>Desde 2015 · Teléfono: 617 11 41 21</p>
-  </header>
+<header>
+  <h1>Peluquería Nizar</h1>
+  <p>Estilo, confianza y calidad en Burlada, Navarra</p>
+</header>
 
-  <section class="descripcion">
-    <p><strong>Peluquería Nizar</strong> es tu barbería de confianza en Burlada. Te ofrecemos cortes modernos, clásicos y servicios de afeitado profesional. ¡Te esperamos!</p>
-  </section>
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#galeria">Galería</a>
+  <a href="#precios">Precios</a>
+  <a href="#equipo">Equipo</a>
+  <a href="#opiniones">Opiniones</a>
+  <a href="#reservas">Reservas</a>
+  <a href="#horarios">Horarios</a>
+  <a href="#contacto">Contacto</a>
+  <a href="#ubicacion">Ubicación</a>
+</nav>
 
-  <section class="catalogo">
-    <div class="card">
-      <h3>Corte Hombre</h3>
-      <p class="precio">10 €</p>
-      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Corte%20Hombre" target="_blank">Reservar</a>
-    </div>
-    <div class="card">
-      <h3>Corte Niño</h3>
-      <p class="precio">9 €</p>
-      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Corte%20Niño" target="_blank">Reservar</a>
-    </div>
-    <div class="card">
-      <h3>Corte Jubilado</h3>
-      <p class="precio">10 €</p>
-      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Corte%20Jubilado" target="_blank">Reservar</a>
-    </div>
-    <div class="card">
-      <h3>Cortar y Afeitar</h3>
-      <p class="precio">18 €</p>
-      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Cortar%20y%20Afeitar" target="_blank">Reservar</a>
-    </div>
-    <div class="card">
-      <h3>Cortar y Lavar</h3>
-      <p class="precio">15 €</p>
-      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Cortar%20y%20Lavar" target="_blank">Reservar</a>
-    </div>
-    <div class="card">
-      <h3>Cortar Barba</h3>
-      <p class="precio">5 €</p>
-      <a class="btn-whatsapp" href="https://wa.me/34617114121?text=Hola%2C%20me%20gustaría%20reservar%20Cortar%20Barba" target="_blank">Reservar</a>
-    </div>
-  </section>
+<section id="inicio">
+  <h2>Bienvenidos</h2>
+  <p class="info">Peluquería Nizar, donde Mouhcine cuida de tu estilo con profesionalidad y pasión. Ven y disfruta de un servicio personalizado y moderno.</p>
+</section>
 
-  <section class="contacto">
-    <h2>Contacto y Horarios</h2>
-    <p><strong>Dirección:</strong> C. Hilarión Eslava, 4, 31600 Burlada, Navarra</p>
-    <p><strong>Teléfono / WhatsApp:</strong> 617 11 41 21</p>
+<section id="servicios">
+  <h2>Servicios</h2>
+  <div class="grid services">
+    <div class="card"><h3>Corte clásico</h3><p>Precisión y elegancia para todos los gustos.</p></div>
+    <div class="card"><h3>Corte moderno</h3><p>Fade, diseño y estilos actuales para destacar.</p></div>
+    <div class="card"><h3>Afeitado navaja</h3><p>Tradición y confort con toallas calientes.</p></div>
+    <div class="card"><h3>Tinte</h3><p>Color profesional para resaltar tu personalidad.</p></div>
+  </div>
+</section>
 
-    <h3>Horario</h3>
-    <ul>
-      <li>Lunes a Viernes: 9:30–13:30 / 16:00–20:00</li>
-      <li>Sábado: 9:30–14:00</li>
-      <li>Domingo: Cerrado</li>
-    </ul>
+<section id="galeria">
+  <h2>Galería</h2>
+  <div class="grid gallery">
+    <div class="card"><img src="https://images.unsplash.com/photo-1600185367117-9a8a9621e17d?auto=format&fit=crop&w=400&q=80" alt="Interior peluquería"/></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Barbero cortando pelo"/></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1525097487452-6278ff080c31?auto=format&fit=crop&w=400&q=80" alt="Herramientas peluquería"/></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Corte moderno"/></div>
+  </div>
+</section>
 
-    <iframe 
-      src="https://www.google.com/maps?q=C.%20Hilarión%20Eslava%2C%204%2C%2031600%20Burlada%2C%20Navarra&output=embed" 
-      allowfullscreen>
-    </iframe>
-  </section>
+<section id="precios">
+  <h2>Precios</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Servicio</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Corte Hombre</td><td>10 €</td></tr>
+      <tr><td>Corte Niño</td><td>9 €</td></tr>
+      <tr><td>Corte Jubilado</td><td>10 €</td></tr>
+      <tr><td>Cortar y Afeitar</td><td>18 €</td></tr>
+      <tr><td>Cortar y Lavar</td><td>15 €</td></tr>
+      <tr><td>Cortar Barba</td><td>5 €</td></tr>
+    </tbody>
+  </table>
+</section>
 
-  <footer>
-    © 2025 Peluquería Nizar – Todos los derechos reservados
-  </footer>
+<section id="equipo">
+  <h2>Equipo</h2>
+  <div class="grid team" style="justify-content: center;">
+    <div class="card" style="max-width: 300px; margin: auto;">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=300&q=80" alt="Mouhcine" />
+      <h3>Mouhcine</h3>
+      <p>Barbero & Estilista principal</p>
+    </div>
+  </div>
+</section>
+
+<section id="opiniones">
+  <h2>Opiniones</h2>
+  <div class="info">
+    <p>⭐️⭐️⭐️⭐️⭐️ “Excelente atención y resultados. Mouhcine es un profesional con mucho talento.”</p>
+  </div>
+</section>
+
+<section id="reservas">
+  <h2>Reservas</h2>
+  <p class="info">Reserva tu cita por WhatsApp o teléfono: <a href="tel:+34617114121">617 11 41 21</a></p>
+</section>
+
+<section id="horarios">
+  <h2>Horarios</h2>
+  <div class="info">
+    <p><strong>Lunes a viernes:</strong> 9:30–13:30 y 16:00–20:00</p>
+    <p><strong>Sábado:</strong> 9:30–14:00</p>
+    <p><strong>Domingo:</strong> Cerrado</p>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p class="info">
+    Teléfono / WhatsApp: <a href="tel:+34617114121">617 11 41 21</a><br />
+    Dirección: C. Hilarión Eslava, 4, 31600 Burlada, Navarra
+  </p>
+</section>
+
+<section id="ubicacion">
+  <h2>Ubicación</h2>
+  <div style="max-width: 600px; margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.594930174255!2d-1.641516384605354!3d42.82289147916332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd50f89a118fd4e9%3A0x34110bf1c19f8b3d!2sC.%20Hilarion%20Eslava%2C%204%2C%2031600%20Burlada%2C%20Navarra!5e0!3m2!1ses!2ses!4v1686846814579!5m2!1ses!2ses"
+      width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<a
+  href="https://wa.me/34617114121"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="WhatsApp"
+  ><i class="fab fa-whatsapp"></i
+></a>
+
+<footer>
+  <p>© 2025 Peluquería Nizar - Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
